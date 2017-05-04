@@ -38,10 +38,7 @@ def createJson(user, date_creation, lang, place_name, place_country, place_type,
 
     json_dict["reply"] = reply
 
-
-    js_dump = json.dumps(json_dict)
-
-    return js_dump
+    return json_dict
 
 
 

@@ -79,18 +79,21 @@ class TwitterExtractor(object):
                     with codecs.open("./data_folder/raw_tweets_{0}.txt".format(self.q), "a", "utf-8") as raw_out:
 
                         for tweet in bin:
-                            json.dump(tweet, raw_out, separators="\n")
+                            json.dump(tweet, raw_out, ensure_ascii=False)
+                            raw_out.write("\n")
 
                     with codecs.open("./data_folder/raw_reply_tweets_{0}.txt".format(self.q), "a",
                                      "utf-8") as reply_out:
 
                         for tweet in bin_reply:
-                            json.dump(tweet, reply_out, separators="\n")
+                            json.dump(tweet, reply_out, ensure_ascii=False)
+                            reply_out.write("\n")
 
                     with codecs.open("./data_folder/tweets_{0}.txt".format(self.q), "a", "utf-8") as js_out:
 
                         for tweet in json_bin:
-                            json.dump(tweet, js_out, separators="\n")
+                            json.dump(tweet, js_out, ensure_ascii=False)
+                            js_out.write("\n")
 
                     bin = []
                     bin_reply = []
